@@ -1,0 +1,6 @@
+{
+	"image_names": ["smile"],
+	"roots": {
+		"smile": "assets/engine/images/smile.png"
+	}
+}
