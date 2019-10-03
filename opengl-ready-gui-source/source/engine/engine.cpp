@@ -27,6 +27,7 @@ int Engine::launch() {
 
 		glfwPollEvents();
 		window.clear_buffers();
+		setMousePos((int)window.get_mouse_x(), (int)window.get_mouse_y());
 
 		iface.render();
 

@@ -3,7 +3,6 @@
 #include <headers.h>
 #include <global.h>
 #include <objects.h>
-
 #include "../gui/gui.h"
 
 class Interface
@@ -14,6 +13,7 @@ public:
 	void render();
 	~Interface();
 private:
+	gui::Menu menu;
 	gui::Image img1;
 	gui::Image img2;
 	gui::SimpleText text1;

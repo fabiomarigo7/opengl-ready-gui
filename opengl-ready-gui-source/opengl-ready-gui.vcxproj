@@ -140,6 +140,7 @@
     <ClCompile Include="source\engine\gui\button.cpp" />
     <ClCompile Include="source\engine\gui\form_input.cpp" />
     <ClCompile Include="source\engine\gui\image.cpp" />
+    <ClCompile Include="source\engine\gui\menu.cpp" />
     <ClCompile Include="source\engine\gui\rectangle.cpp" />
     <ClCompile Include="source\engine\gui\simple_text.cpp" />
     <ClCompile Include="source\engine\interface\interface.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="source\engine\gui\form_input.h" />
     <ClInclude Include="source\engine\gui\gui.h" />
     <ClInclude Include="source\engine\gui\image.h" />
+    <ClInclude Include="source\engine\gui\menu.h" />
     <ClInclude Include="source\engine\gui\rectangle.h" />
     <ClInclude Include="source\engine\gui\simple_text.h" />
     <ClInclude Include="source\engine\interface\interface.h" />

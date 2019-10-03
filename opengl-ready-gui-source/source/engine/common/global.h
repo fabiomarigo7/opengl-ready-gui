@@ -23,6 +23,10 @@ namespace glb {
 	bool getMouseLeft();
 	bool getMouseRight();
 
+	static int pickingId;
+	void resetPickingId();
+	void increasePickingId();
+	int getPickingId();
 
 	std::string readFile(const char* fileLocation);
 	int getId(GLint x, GLint y);

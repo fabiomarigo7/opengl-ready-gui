@@ -42,6 +42,18 @@ namespace glb {
 		return glm::ivec2(mouseX, mouseY);
 	}
 
+	int getPickingId() {
+		return pickingId;
+	}
+
+	void increasePickingId() {
+		pickingId++;
+	}
+
+	void resetPickingId() {
+		pickingId = 0;
+	}
+
 	int getId(GLint x, GLint y) {
 		unsigned char data[4];
 		glReadPixels(x, y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, &data);

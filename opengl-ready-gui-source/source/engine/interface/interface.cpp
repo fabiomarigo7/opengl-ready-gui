@@ -3,7 +3,8 @@
 Interface::Interface() {}
 
 void Interface::create() {
-
+	glb::resetPickingId();
+	glb::increasePickingId();
 	img1 = gui::Image("smile");
 	img1.create("center", 100, 200, 100, 100, 0);
 	img2 = gui::Image("smile");
@@ -20,10 +21,15 @@ void Interface::create() {
 	rect2.create("filled", 500, 100, 300, 80, "center", 0);
 	rect3 = gui::Rectangle();
 	rect3.create("border-filled", 300, 500, 40, 40, "center", 0);
+	menu = gui::Menu();
+	menu.create();
 }
 
 void Interface::render() {
+	/* picking */
+	menu.render(true);
 
+	/* normal rendering */
 	img1.render(false);
 	img2.render(false);
 	text1.render_static();
@@ -32,6 +38,7 @@ void Interface::render() {
 	rect1.render(glm::vec4(255.f, 255.f, 0.f, 255.f));
 	rect2.render(glm::vec4(255.f, 0.f, 0.f, 255.f));
 	rect3.render(glm::vec4(255.f, 0.f, 255.f, 255.f));
+	menu.render(false);
 }
 
 Interface::~Interface() {}

@@ -93,6 +93,9 @@
     <ClCompile Include="source\engine\interface\interface.cpp">
       <Filter>Source Files\interface</Filter>
     </ClCompile>
+    <ClCompile Include="source\engine\gui\menu.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\engine\common\global.h">
@@ -147,6 +150,9 @@
       <Filter>Header Files\interface</Filter>
     </ClInclude>
     <ClInclude Include="source\engine\gui\gui.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\engine\gui\menu.h">
       <Filter>Header Files\gui</Filter>
     </ClInclude>
   </ItemGroup>
