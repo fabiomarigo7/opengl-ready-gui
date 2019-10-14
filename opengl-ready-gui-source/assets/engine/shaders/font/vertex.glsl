@@ -5,50 +5,46 @@ layout (location = 1) in vec2 tex;
 out vec2 FragTex;
 
 uniform mat4 projection;
-uniform float max_x;
-uniform float max_y;
-uniform int startChar;
-uniform int currentChar;
-uniform float x;
-uniform float y;
+uniform float x; // x-position in the screen
+uniform float y; // y-position in the screen
 
-uniform int hAlign;
-uniform int vAlign;
-
+uniform int char_xpos; // x-position in the font png
+uniform int char_ypos; // y-position in the font png
+uniform int char_xadvance;
+uniform int char_width;
+uniform int char_height;
+uniform int char_xoffset;
+uniform int char_yoffset;
 uniform int totalWidth;
 uniform int fontHeight;
 
+// text properties
+
+uniform int hAlign;
+uniform int vAlign;
 uniform int shadow;
-
-float current_x;
-float current_y;
-
-float x1, y1;
 
 void main()
 {
     
-    current_x = float((currentChar-startChar)%16);
-    current_y = float((currentChar-startChar)/16);
+    float current_x = float(char_xpos);
+    float current_y = float(char_ypos);
+    float x1, y1;
     
-    if (hAlign == 0){
-        x1 = x;
-    }    
-    else if (hAlign == 1){
-        x1 = x - totalWidth/2.f;
-    }
-    if (vAlign == 0){
-        y1 = y;
-    }
-    else if (vAlign == 1){
-        y1 = y - fontHeight/2.f;
-    }
-       
+    if (hAlign == 0) x1 = x + 5.f;
+    else if (hAlign == 1) x1 = x - totalWidth / 2.f;
+    
+    if (vAlign == 0) y1 = y + fontHeight;
+    else if (vAlign == 1) y1 = y + fontHeight / 2.f;
+    
     if (shadow == 1){
         x1 = x1 + 1.f;
         y1 = y1 - 1.f;
     }
     
-    gl_Position = projection * vec4(pos.x + x1, pos.y + y1, 0.0, 1.0);
-	FragTex = vec2(tex.x / max_x + current_x / max_x, tex.y / max_y + current_y / max_y);
+    float xtex = (current_x) + tex.x * ( char_width ); 
+    float ytex = (current_y) + tex.y * ( char_height ); 
+    
+    gl_Position = projection * vec4(pos.x * char_width + x1 + char_xoffset, pos.y * char_height + y1 - char_yoffset, 0.0, 1.0);
+	FragTex = vec2(xtex / 512.f, ytex / 512.f);
 }  

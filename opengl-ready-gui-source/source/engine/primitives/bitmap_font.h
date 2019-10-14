@@ -3,45 +3,54 @@
 #include <shader.h>
 #include <json.hpp>
 
+using namespace std;
+using namespace glm;
+
 namespace txt {
 	struct CharData {
 		int charWidth[256];
-		GLint fontHeight;
+		float fontHeight;
 		float fontWidth;
 		int startChar;
 	};
 
+	struct Character {
+		int x, y, width, height, xoffset, yoffset, xadvance, line_height, base_width;
+	};
+
 	struct StaticData {
-		std::vector<float> X;
-		std::vector<GLint> charList;
-		glm::vec4 color;	
-		float y;		
+		vector<float> X;
+		vector<Character> charList;
+		vec4 color;
+		float y;
 		int textSize;
 		int totalWidth;
 		int startChar;
-		GLint fontHeight;
+		int fontHeight;
 		GLuint textureID;
 		bool shadow;
 	};
-}
+};
 
-class BitmapFont : public Shader 
+
+class BitmapFont : public Shader
 {
 public:
 	BitmapFont();
-	void set_align(std::string hAlign = "left", std::string vAlign = "normal");
+	void set_align(string hAlign = "left", string vAlign = "normal");
 	void create();
-	void render_dynamic(std::string &font, float xPos, float yPos, std::string &text, glm::vec4 &color, bool shadow);
-	txt::StaticData create_static(std::string &font, std::string &text, float x);
+	void render_dynamic(string &font, float xPos, float yPos, string &text, vec4 &color, bool shadow);
+	txt::StaticData create_static(string &font, string &text, float x);
 	void render_static(txt::StaticData &data);
 	int getShaderId() { return shaderId; }
 	~BitmapFont();
 
- private:
-	 std::map<std::string, txt::CharData> fontData;
-	 std::string h_align, v_align, path;
-	 int total_width;
-	 int offset_x;
-	 std::map<std::string, int> hAlignMap;
-	 std::map<std::string, int> vAlignMap;
+private:
+	map<int, txt::Character> fontData[10];
+	map<string, int> fontIdMap;
+	string h_align, v_align, path;
+	int total_width;
+	int offset_x;
+	map<string, int> hAlignMap;
+	map<string, int> vAlignMap;
 };
