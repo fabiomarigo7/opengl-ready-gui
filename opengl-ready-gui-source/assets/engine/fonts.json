@@ -1,6 +1,8 @@
 {
     "fonts": [
-        "tahoma_8",
-        "inconsolata_8"
+        "tahoma_15px",
+        "tahomabold_13px",
+        "tahomabold_15px",
+        "couriernew_15px"
     ]
 }

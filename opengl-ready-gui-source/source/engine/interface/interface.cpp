@@ -12,11 +12,11 @@ void Interface::create() {
 	img2 = gui::Image("smile");
 	img2.create("center", 650, 300, 200, 200, 0);
 	text1 = gui::SimpleText("static");
-	text1.create_static(texts["text-1"], "tahoma_8", 50, 50, "left", "normal", glm::vec4(255.f));
+	text1.create_static(texts["text-1"], "tahomabold_15px", 50, 50, "left", "normal", glm::vec4(255.f));
 	text2 = gui::SimpleText("static");
-	text2.create_static(texts["text-2"], "tahoma_8", 200, 300, "left", "normal", glm::vec4(255.f, 0.f, 0.f, 255.f));
+	text2.create_static(texts["text-2"], "tahoma_15px", 200, 300, "left", "normal", glm::vec4(255.f, 0.f, 0.f, 255.f));
 	text3 = gui::SimpleText("static");
-	text3.create_static(texts["text-3"], "inconsolata_8", 50, 500, "left", "normal", glm::vec4(0.f, 255.f, 0.f, 255.f));
+	text3.create_static(texts["text-3"], "couriernew_15px", 50, 500, "left", "normal", glm::vec4(0.f, 255.f, 0.f, 255.f));
 	rect1 = gui::Rectangle();
 	rect1.create("border", 600, 500, 50, 50, "center", 0);
 	rect2 = gui::Rectangle();

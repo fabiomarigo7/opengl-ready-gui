@@ -36,7 +36,7 @@ namespace gui {
 			titles[s].titleBack = gui::Rectangle();
 			titles[s].titleBack.create("filled", titles[s].titlePosition.x, titles[s].titlePosition.y, titles[s].titleWidth, titles[s].titleHeight, "bottom-left", titles[s].pickingID);
 			titles[s].titleText = gui::SimpleText("static");
-			titles[s].titleText.create_static(titles[s].title, "inconsolata_8", titles[s].titlePosition.x + 0.5f * titles[s].titleWidth, titles[s].titlePosition.y + 0.5f * titles[s].titleHeight, "center", "middle", glm::vec4(255.f));
+			titles[s].titleText.create_static(titles[s].title, "tahomabold_13px", titles[s].titlePosition.x + 0.5f * titles[s].titleWidth, titles[s].titlePosition.y + 0.5f * titles[s].titleHeight, "center", "middle", glm::vec4(255.f));
 		
 
 			/* options */
@@ -47,7 +47,7 @@ namespace gui {
 				titles[s].optionsPosition.push_back(glm::ivec2(titles[s].titleWidth * i, glb::getWindowSize().y - titles[s].optionsHeight * (j + 2)));
 
 				gui::SimpleText tempText = gui::SimpleText("static");
-				tempText.create_static(titles[s].options[j], "inconsolata_8", titles[s].optionsPosition[j].x + 0.5f * titles[s].optionsWidth - titles[s].optionsOffsetX, titles[s].optionsPosition[j].y + 0.5 * titles[s].optionsHeight, "left", "middle", glm::vec4(255.f));
+				tempText.create_static(titles[s].options[j], "tahomabold_13px", titles[s].optionsPosition[j].x + 0.5f * titles[s].optionsWidth - titles[s].optionsOffsetX, titles[s].optionsPosition[j].y + 0.5 * titles[s].optionsHeight, "left", "middle", glm::vec4(255.f));
 				titles[s].optionsText.push_back(tempText);
 
 				gui::Rectangle tempRect = gui::Rectangle();

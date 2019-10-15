@@ -10,7 +10,7 @@ namespace gui {
 		buttonImage.create("center", (float)x, (float)y, (float)0, (float)0, pickingID);
 
 		buttonText = gui::SimpleText("static");
-		buttonText.create_static(Text, "tahoma_8", (float)x, (float)y, "center", "middle", textColor);
+		buttonText.create_static(Text, "tahomabold_13px", (float)x, (float)y, "center", "middle", textColor);
 	}
 
 	void Button::render(bool picking) {

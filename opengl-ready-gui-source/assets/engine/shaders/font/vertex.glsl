@@ -10,11 +10,8 @@ uniform float y; // y-position in the screen
 
 uniform int char_xpos; // x-position in the font png
 uniform int char_ypos; // y-position in the font png
-uniform int char_xadvance;
 uniform int char_width;
 uniform int char_height;
-uniform int char_xoffset;
-uniform int char_yoffset;
 uniform int totalWidth;
 uniform int fontHeight;
 
@@ -45,6 +42,6 @@ void main()
     float xtex = (current_x) + tex.x * ( char_width ); 
     float ytex = (current_y) + tex.y * ( char_height ); 
     
-    gl_Position = projection * vec4(pos.x * char_width + x1 + char_xoffset, pos.y * char_height + y1 - char_yoffset, 0.0, 1.0);
+    gl_Position = projection * vec4(pos.x * char_width + x1, pos.y * char_height + y1, 0.0, 1.0);
 	FragTex = vec2(xtex / 512.f, ytex / 512.f);
 }  
